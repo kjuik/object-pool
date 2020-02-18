@@ -20,6 +20,9 @@ public class ObjectPool : MonoBehaviour
         return ret.GetComponent<T>();
     }
     
+    public void Return(GameObject obj) 
+        => Return(obj.GetComponent<PooledObject>());
+    
     public void Return(Component obj) 
         => Return(obj.GetComponent<PooledObject>());
 
